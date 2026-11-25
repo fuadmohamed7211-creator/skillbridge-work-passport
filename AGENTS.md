@@ -28,3 +28,8 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## SkillBridge Passport
+- Candidate "AI" analysis is a deterministic local engine in src/lib/analysis.ts (keyword sector match + generic fallback) — the user required zero external API failures during live judging.
+- All persistence goes through src/lib/store.ts (localStorage + `useStore` hook firing a `sbp-change` event) so every tab updates live.
+- Sample passports/endorsements live in src/lib/samples.ts and are merged with user data at read time, never written to storage.
